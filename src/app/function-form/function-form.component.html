@@ -1,0 +1,19 @@
+<div [formGroup]='functionForm' class='form'>
+
+  <mat-form-field appearance="fill" class='form-field'>
+    <mat-label>Item</mat-label>
+    <input matInput formControlName="item">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class='form-field'>
+    <mat-label>Price</mat-label>
+    <input matInput formControlName="price">
+  </mat-form-field>
+
+  <button mat-flat-button color="primary" class='button' (click)='submit()'>Submit</button>
+
+</div>
+
+<div *ngIf="responseString | async as rs">
+  <p class='result-string'> {{ rs }} </p>
+</div>
