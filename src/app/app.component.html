@@ -1,6 +1,6 @@
 <div class='main-screen'>
-  <mat-card class='card-form mat-elevation-z8'>
-    <mat-card-title>Enter some values</mat-card-title>
+  <mat-card class='card-form mat-elevation-z8' @fadeInOut *ngIf='isShown'>
+    <mat-card-title class='card-title'>Enter some values</mat-card-title>
 
     <mat-card-content>
       <app-function-form class='actual-form'></app-function-form>

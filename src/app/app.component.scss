@@ -7,6 +7,12 @@
   display: flex;
   align-content: center;
 
+  .card-title {
+    margin-top: 5px;
+    margin-left: 5px;
+    font-size: 30px;
+  }
+
   .card-form {
     margin: 50px 50px;
     width: 100%;
@@ -15,7 +21,7 @@
     .actual-form {
       display: flex;
       flex-direction: column;
-      margin-top: 30px;
+      margin-top: 50px;
       margin-left: 20px;
     }
   }
