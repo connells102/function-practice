@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { FunctionFormService } from './function-form-service/function-form.service';
+declare var anime: any;
 
 @Component({
   selector: 'app-function-form',
@@ -42,4 +43,49 @@ export class FunctionFormComponent implements OnInit {
 
     this.responseString = this.functionFormService.getResponseString();
   }
+
+  ngAfterViewInit(): void {
+    // Wrap every letter in a span
+var textWrapper = document.querySelector('.an-2') ;
+if(textWrapper)
+{
+  if(textWrapper.textContent)
+  {
+    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+  }
+}
+
+  //anime.timeline({loop: true})
+  // .add({
+  //   targets: '.an-2 .letter',
+  //   opacity: [0,1],
+  //   easing: "easeInOutQuad",
+  //   duration: 2250,
+  //   delay: 150
+  // }).add({
+  //   targets: '.an-2',
+  //   opacity: 0,
+  //   duration: 1000,
+  //   easing: "easeOutExpo",
+  //   delay: 1000
+  // });
+
+  anime.timeline({
+    targets: '.result-string',
+    loop: true,
+    rotate:  {
+      value: 360,
+      duration: 1800,
+      easing: 'easeInOutSine'
+    },
+    scale: {
+      value: 2,
+      duration: 1600,
+      delay: 800,
+      easing: 'easeInOutQuart'
+    },
+    easing: "easeOutExpo"
+
+  })
+}
 }
