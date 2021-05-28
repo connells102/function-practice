@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
+      imports: [ NoopAnimationsModule ],
+      declarations: [ AppComponent ]
     }).compileComponents();
   });
 
@@ -26,6 +26,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('function-practice app is running!');
+    expect(compiled.querySelector('.card-title').textContent).toContain('Enter some values');
   });
 });
