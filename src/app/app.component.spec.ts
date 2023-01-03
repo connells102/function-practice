@@ -1,12 +1,26 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
+import { FunctionFormComponent } from './function-form/function-form.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ NoopAnimationsModule ],
-      declarations: [ AppComponent ]
+      imports: [
+        NoopAnimationsModule,
+        MatCardModule,
+        MatInputModule,
+        HttpClientTestingModule,
+        ReactiveFormsModule
+      ],
+      declarations: [
+        AppComponent,
+        FunctionFormComponent
+      ]
     }).compileComponents();
   });
 

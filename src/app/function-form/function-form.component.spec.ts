@@ -1,5 +1,6 @@
-import { stringify } from '@angular/compiler/src/util';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { Observable, of } from 'rxjs';
 import { FunctionFormService } from './function-form-service/function-form.service';
@@ -18,7 +19,11 @@ describe('FunctionFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ NoopAnimationsModule ],
+      imports: [
+        NoopAnimationsModule,
+        ReactiveFormsModule,
+        MatInputModule
+      ],
       declarations: [ FunctionFormComponent ],
       providers: [
         { provide: FunctionFormService, useValue: mockFunctionFormService }
